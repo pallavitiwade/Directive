@@ -10,15 +10,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OneComponent } from './components/one/one.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
-
-import { PostDashboardComponent } from './shared/component/directives/postDashboard/post-dashboard/post-dashboard.component';
-import { PostCardComponent } from './shared/component/directives/post-card/post-card.component';
+import { MobileComponent } from './shared/component/directives/mobile/mobile.component';
+import { MobileDashboardComponent } from './shared/component/directives/mobile-dashboard/mobile-dashboard.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    PostDashboardComponent,
-    PostCardComponent,
+     AppComponent,
+     MobileComponent,
+     MobileDashboardComponent,
+    // PostDashboardComponent,
+    // PostCardComponent,
     // OneComponent,
 
   //  cssHighLighterRendere,
