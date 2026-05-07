@@ -11,13 +11,16 @@ import { OneComponent } from './components/one/one.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { MobileComponent } from './shared/component/directives/mobile/mobile.component';
-import { MobileDashboardComponent } from './shared/component/directives/mobile-dashboard/mobile-dashboard.component';
+import { MovieComponent } from './shared/component/directives/movie/movie.component';
+import { MovieDashobardComponent } from './shared/component/directives/movie-dashobard/movie-dashobard.component';
 
 @NgModule({
   declarations: [
      AppComponent,
-     MobileComponent,
-     MobileDashboardComponent,
+     MovieComponent,
+     MovieDashobardComponent,
+    //  MobileComponent,
+    //  MobileDashboardComponent,
     // PostDashboardComponent,
     // PostCardComponent,
     // OneComponent,

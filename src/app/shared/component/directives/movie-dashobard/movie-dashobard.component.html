@@ -1,0 +1,8 @@
+    <div class="row" *ngIf="moviesArr.length > 0 ">
+        <div 
+        *ngFor="let movie of moviesArr"
+
+        class="col-md-4 mb-4">
+            <app-movie [movieObj]="movie"></app-movie>
+        </div>
+    </div>
