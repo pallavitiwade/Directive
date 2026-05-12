@@ -10,15 +10,29 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OneComponent } from './components/one/one.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
+
+
 import { MobileComponent } from './shared/component/directives/mobile/mobile.component';
 import { MovieComponent } from './shared/component/directives/movie/movie.component';
 import { MovieDashobardComponent } from './shared/component/directives/movie-dashobard/movie-dashobard.component';
+import { TodoDashboardComponent } from './shared/component/directives/todo-dashboard/todo-dashboard.component';
+import { TodoFormComponent } from './shared/component/directives/todo-form/todo-form.component';
+import { TodoListComponent } from './shared/component/directives/todo-list/todo-list.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { GetConfirmComponent } from './shared/get-confirm/get-confirm.component';
+import{MatDialogModule} from "@angular/material/dialog"
+
 
 @NgModule({
   declarations: [
      AppComponent,
      MovieComponent,
      MovieDashobardComponent,
+     TodoDashboardComponent,
+     TodoFormComponent,
+     TodoListComponent,
+     GetConfirmComponent,
     //  MobileComponent,
     //  MobileDashboardComponent,
     // PostDashboardComponent,
@@ -34,7 +48,10 @@ import { MovieDashobardComponent } from './shared/component/directives/movie-das
     BrowserModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatIconModule,
+    MatSnackBarModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

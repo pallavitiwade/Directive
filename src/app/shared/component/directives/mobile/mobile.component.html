@@ -22,9 +22,6 @@
                             <button [disabled]="!mobileObj.isAvailable" class="btn btn-outline-warning">Add To
                                 Cart</button>
                             <button [disabled]="!mobileObj.isAvailable" class="btn btn-outline-primary">Buy Now</button>
-
-
-
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -36,7 +33,6 @@
                         }">
                                 {{mobileObj.rating}}
                             </small>
-
                         </h2>
                         <h5>Features</h5>
                         <ul class="list-group list-group-flush">
@@ -56,9 +52,8 @@
                             </h3>
                             <strong class="text-success" *ngIf="mobileObj.noOfItems < 10">
                                 Only{{mobileObj.noOfItems}}Left !!!</strong>
-                        
+                    
                     </div>
-
                 </div>
             </div>
              <p class="text-danger isnotAvailable" *ngIf="!mobileObj.isAvailable">Product is not Available</p>

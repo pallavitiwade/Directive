@@ -1,46 +1,35 @@
-
-
-
 <div class="card">
-         <figure class="movieCard mb-0">
-        <img src="https://image.tmdb.org/t/p/w500/{{movieObj.backdrop_path || movieObj.poster_path }}"
-        alt=""
-        />
-       
-            <figcaption>
-                <div class="titleInfo">
-                    <div class="row">
-                        <div class="col-10">
-                            <h3 class="m-0 movietitle">
+    <figure class="movieCard mb-0">
+        <img src="https://image.tmdb.org/t/p/w500/{{movieObj.backdrop_path || movieObj.poster_path }}" alt="" />
+        <figcaption>
+            <div class="titleInfo">
+                <div class="row">
+                    <div class="col-10">
+                        <h3 class="m-0 movietitle">
                             {{movieObj.title || movieObj.original_title}}
-                            </h3>
-                        </div>
-                        <div class="col-2">
-                            <h3 class="m-0">
-                            <span class="badge"
-                            [ngClass]="{
+                        </h3>
+                    </div>
+                    <div class="col-2">
+                        <h3 class="m-0">
+                            <span class="badge" [ngClass]="{
                                 'badge-success':movieObj.vote_average >= 7,
                                 'badge-warning':movieObj.vote_average >= 5 && movieObj.vote_average < 7,
                                 'badge-danger':movieObj.vote_average < 5
-                            }"
-                            >
+                            }">
                                 {{movieObj.vote_average}}
-
                             </span>
-                            </h3>
-                        </div>
+                        </h3>
                     </div>
                 </div>
-                <div class="overview">
-                   <h3 class="m-0">
-                            {{movieObj.title || movieObj.original_title}}
-                            </h3>
-
-                    <p class="mb-0">
-                        {{movieObj.overview}}
-
-                    </p>
-                </div>
-            </figcaption>
-        </figure>
+            </div>
+            <div class="overview">
+                <h3 class="m-0">
+                    {{movieObj.title || movieObj.original_title}}
+                </h3>
+                <p class="mb-0">
+                    {{movieObj.overview}}
+                </p>
+            </div>
+        </figcaption>
+    </figure>
 </div>

@@ -1,0 +1,51 @@
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { config } from 'rxjs';
+import { Itodos } from 'src/app/model/todo';
+import { GetConfirmComponent } from 'src/app/shared/get-confirm/get-confirm.component';
+
+@Component({
+  selector: 'app-todo-list',
+  templateUrl: './todo-list.component.html',
+  styleUrls: ['./todo-list.component.scss']
+})
+export class TodoListComponent implements OnInit {
+@Input()getTodos!:Array<Itodos>
+@Output()emitRemovedId:EventEmitter<string>=new EventEmitter<string>()
+@Output()emitEditTodo:EventEmitter<Itodos>=new EventEmitter<Itodos>()
+
+  constructor(
+   private _matdialog:MatDialog
+
+  ) {}
+
+  ngOnInit(): void {
+  
+  }
+
+  onTodoRemove(id:string){
+    //let getConfirm=confirm(`Are You Sure?`)
+   
+      let Config=new MatDialogConfig()
+       Config.width='250px',
+       Config.disableClose=true
+
+       let MatDialogRef=this._matdialog.open(GetConfirmComponent, Config)
+       MatDialogRef.afterClosed().subscribe(getConfirm=>{
+        if(getConfirm===true){
+           this.emitRemovedId.emit(id)
+
+        }
+       })
+      }
+
+
+onEdit(editTodo:Itodos) {
+this.emitEditTodo.emit(editTodo)
+
+    }
+
+  }
+
+
+
