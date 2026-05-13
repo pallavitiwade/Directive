@@ -21,7 +21,11 @@ import { TodoFormComponent } from './shared/component/directives/todo-form/todo-
 import { TodoListComponent } from './shared/component/directives/todo-list/todo-list.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { GetConfirmComponent } from './shared/get-confirm/get-confirm.component';
-import{MatDialogModule} from "@angular/material/dialog"
+import{MatDialogModule} from "@angular/material/dialog";
+import { StudentDashboardComponent } from './shared/component/directives/student-dashboard/student-dashboard.component';
+import { StudentFormComponent } from './shared/component/directives/student-form/student-form.component';
+import { StudentListComponent } from './shared/component/directives/student-list/student-list.component';
+import { SGetConfirmComponent } from './shared/component/directives/s-get-confirm/s-get-confirm.component'
 
 
 @NgModule({
@@ -33,6 +37,10 @@ import{MatDialogModule} from "@angular/material/dialog"
      TodoFormComponent,
      TodoListComponent,
      GetConfirmComponent,
+     StudentDashboardComponent,
+     StudentFormComponent,
+     StudentListComponent,
+     SGetConfirmComponent,
     //  MobileComponent,
     //  MobileDashboardComponent,
     // PostDashboardComponent,

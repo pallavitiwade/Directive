@@ -15,6 +15,7 @@ export class TodoFormComponent implements OnInit {
 @Output() emitNewTodo:EventEmitter<Itodos>=new EventEmitter<Itodos>()
 @Output() emitUpdateTodo:EventEmitter<Itodos>=new EventEmitter<Itodos>()
 
+
 isInEditMode:boolean=false;
   constructor(
     private _todoServices:todoServices
@@ -29,6 +30,7 @@ isInEditMode:boolean=false;
       this.isComplted.nativeElement.value=this.getEditObj.isComplted
 
     }
+    
   }
   ngOnInit(): void {
     console.log(this.getEditObj)
