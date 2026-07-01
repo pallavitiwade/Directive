@@ -8,58 +8,52 @@ import { todoServices } from '../service/todo.services';
   styleUrls: ['./todo-form.component.scss']
 })
 export class TodoFormComponent implements OnInit {
-@ViewChild('todoItem') todoItem!:ElementRef
-@ViewChild('isComplted') isComplted!:ElementRef
+  @ViewChild('todoItem') todoItem!: ElementRef
+  @ViewChild('isComplted') isComplted!: ElementRef
 
-@Input()getEditObj!:Itodos
-@Output() emitNewTodo:EventEmitter<Itodos>=new EventEmitter<Itodos>()
-@Output() emitUpdateTodo:EventEmitter<Itodos>=new EventEmitter<Itodos>()
-
-
-isInEditMode:boolean=false;
+  @Input() getEditObj!: Itodos
+  @Output() emitNewTodo: EventEmitter<Itodos> = new EventEmitter<Itodos>()
+  @Output() emitUpdateTodo: EventEmitter<Itodos> = new EventEmitter<Itodos>()
+  isInEditMode: boolean = false;
   constructor(
-    private _todoServices:todoServices
-
-  ) {}
-
-  ngOnChanges(changes:SimpleChanges): void{
+    private _todoServices: todoServices
+  ) { }
+  ngOnChanges(changes: SimpleChanges): void {
     console.log(changes);
-    if(!!changes['getEditObj'].currentValue){
-      this.isInEditMode=true
-      this.todoItem.nativeElement.value=this.getEditObj.todoItem
-      this.isComplted.nativeElement.value=this.getEditObj.isComplted
-
+    if (!!changes['getEditObj'].currentValue) {
+      this.isInEditMode = true
+      this.todoItem.nativeElement.value = this.getEditObj.todoItem
+      this.isComplted.nativeElement.value = this.getEditObj.isComplted
     }
-    
+
   }
   ngOnInit(): void {
     console.log(this.getEditObj)
   }
 
-onTodoAdd(){
-  let todo:Itodos={
-    todoItem:this.todoItem.nativeElement.value,
-    isComplted:this.isComplted.nativeElement.value === 'true'?true:false,
-    todoId:this._todoServices.uuid()
+  
+  onTodoAdd() {
+    let todo: Itodos = {
+      todoItem: this.todoItem.nativeElement.value,
+      isComplted: this.isComplted.nativeElement.value === 'true' ? true : false,
+      todoId: this._todoServices.uuid()
+    }
+    console.log(todo)
+    this.todoItem.nativeElement.value = ''
+    this.isComplted.nativeElement.value = true
+
+    this.emitNewTodo.emit(todo)
   }
-console.log(todo)
-this.todoItem.nativeElement.value=''
-this.isComplted.nativeElement.value=true
+  onTodoUpdate() {
+    let UPDATE_OBJ: Itodos = {
+      todoItem: this.todoItem.nativeElement.value,
+      isComplted: this.isComplted.nativeElement.value,
+      todoId: this.getEditObj.todoId
 
-this.emitNewTodo.emit(todo)
-}
-
-
-onTodoUpdate(){
-let UPDATE_OBJ:Itodos={
-  todoItem:this.todoItem.nativeElement.value,
-  isComplted:this.isComplted.nativeElement.value,
-  todoId:this.getEditObj.todoId
-
-}
-this.emitUpdateTodo.emit(UPDATE_OBJ)
-this.todoItem.nativeElement.value=''
-this.isComplted.nativeElement.value=true
-this.isInEditMode=false
-}
+    }
+    this.emitUpdateTodo.emit(UPDATE_OBJ)
+    this.todoItem.nativeElement.value = ''
+    this.isComplted.nativeElement.value = true
+    this.isInEditMode = false
+  }
 }

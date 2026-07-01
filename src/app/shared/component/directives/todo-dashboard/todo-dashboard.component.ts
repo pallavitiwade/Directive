@@ -11,7 +11,7 @@ export class TodoDashboardComponent implements OnInit {
   //api call to fetch todos from database
 todosArr:Array<Itodos>=[
    {
-    todoItem: "Angular",
+    todoItem: "angular",
     todoId: '1',
     isComplted: false
   },
@@ -39,7 +39,9 @@ editTodoObj!:Itodos
   ) { }
 
   ngOnInit(): void {
+
   }
+
 getNewTodo(todo:Itodos){
   this.todosArr.push(todo)
 
@@ -50,8 +52,6 @@ getRemovedId(id:string){
   let getIndex=this.todosArr.findIndex(t=>t.todoId===id)
   let remove=this.todosArr.splice(getIndex,1)
       this._snackBar.openSnackBar(`The Todo Item ${remove[0].todoItem} is Removed Successfully !!!`)
-
-
 }
 
 getEditTodo(editTodo:Itodos){
@@ -67,6 +67,7 @@ emitUpdateTodo(Update:Itodos){
 
 
 }
+
 
 
 

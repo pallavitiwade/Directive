@@ -19,8 +19,9 @@ export class TodoListComponent implements OnInit {
 
   ) {}
 
-  ngOnInit(): void {
   
+  ngOnInit(): void {
+
   }
 
   onTodoRemove(id:string){

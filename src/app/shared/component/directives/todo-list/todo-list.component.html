@@ -1,4 +1,4 @@
-    
+    <mat-card>
     <ul class="list-group" *ngIf="getTodos.length > 0;else notodo">
         <li class="list-group-item d-flex justify-content-between" *ngFor="let todo of getTodos">
             <strong>
@@ -22,3 +22,4 @@
         <p class="alert alert-info">NO Todos Added Yet !!!</p>
     </ng-template>
 
+</mat-card>
